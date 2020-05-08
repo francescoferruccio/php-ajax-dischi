@@ -7,13 +7,13 @@ $(document).ready(function() {
   $.ajax({
     url: 'api.php',
     success: function(data) {
-      console.log(data);
+      // console.log(data);
       for (var key in data) {
         var album = data[key];
 
         var context = {
           urlImg: album.poster,
-          titolo: album.title,
+          titolo: album.title.toUpperCase(),
           artista: album.author,
           anno: album.year
         };

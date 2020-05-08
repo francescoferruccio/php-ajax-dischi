@@ -10,7 +10,9 @@
   </head>
   <body>
     <header>
-
+      <div class="logo">
+        <img src="img/logo.png" alt="logo">
+      </div>
     </header>
     <main>
       <div class="container">
@@ -25,7 +27,7 @@
           <img src="{{urlImg}}" alt="cover">
         </div>
         <div class="album-bottom">
-          <span>{{titolo}}</span>
+          <span class="title">{{titolo}}</span>
           <span>{{artista}}</span>
           <span>{{anno}}</span>
         </div>
