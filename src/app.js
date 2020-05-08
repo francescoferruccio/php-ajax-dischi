@@ -19,6 +19,7 @@ $(document).ready(function() {
   // chiamata ajax alla mia api.php
   $.ajax({
     url: 'api.php',
+    method: 'GET',
     success: function(data) {
       // console.log(data);
 

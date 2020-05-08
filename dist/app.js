@@ -112,6 +112,7 @@ $(document).ready(function () {
 
   $.ajax({
     url: 'api.php',
+    method: 'GET',
     success: function success(data) {
       // console.log(data);
       for (var key in data) {
