@@ -3,23 +3,29 @@ $(document).ready(function() {
   var source = document.getElementById("album-template").innerHTML;
   var template = Handlebars.compile(source);
 
+  // funzione che stampa il singolo album in pagina
+  function stampaAlbum(album) {
+    var context = {
+      urlImg: album.poster,
+      titolo: album.title.toUpperCase(),
+      artista: album.author,
+      anno: album.year
+    };
+    var html = template(context);
 
+    $(".container").append(html);
+  }
+
+  // chiamata ajax alla mia api.php
   $.ajax({
     url: 'api.php',
     success: function(data) {
       // console.log(data);
+
       for (var key in data) {
         var album = data[key];
 
-        var context = {
-          urlImg: album.poster,
-          titolo: album.title.toUpperCase(),
-          artista: album.author,
-          anno: album.year
-        };
-        var html = template(context);
-
-        $(".container").append(html);
+        stampaAlbum(album);
       }
     },
     error: function(errore) {

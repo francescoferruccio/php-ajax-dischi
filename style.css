@@ -1,3 +1,4 @@
+/* REGOLE GENERALI */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@ body {
   color: #808080;
 }
 
+/* HEADER */
 header {
   height: 80px;
   background-color: #2e3a46;
@@ -27,6 +29,7 @@ header {
   height: 70%;
 }
 
+/* MAIN */
 .container {
   display: flex;
   flex-wrap: wrap;
