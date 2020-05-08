@@ -1,4 +1,5 @@
 /* REGOLE GENERALI */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,12 +13,13 @@ body {
 }
 
 /* HEADER */
+
 header {
   height: 80px;
   background-color: #2e3a46;
 }
 
-.logo {
+header .logo {
   height: 100%;
   width: 60%;
   margin: 0 auto;
@@ -25,11 +27,12 @@ header {
   align-items: center;
 }
 
-.logo img {
+header .logo img {
   height: 70%;
 }
 
 /* MAIN */
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +41,7 @@ header {
   margin: 50px auto 100px auto;
 }
 
-.album {
+.container .album {
   background-color: #2e3a46;
   width: calc((100% / 4) - 40px);
   height: 350px;
@@ -50,15 +53,15 @@ header {
   padding: 20px;
 }
 
-.album-top {
+.container .album .album-top {
   height: 60%;
 }
 
-.album-top img {
+.container .album .album-top img {
   width: 100%;
 }
 
-.album-bottom {
+.container .album .album-bottom {
   height: 40%;
   display: flex;
   flex-direction: column;
@@ -66,7 +69,8 @@ header {
   text-align: center;
 }
 
-.album-bottom .title {
+.container .album .album-bottom .title {
   font-weight: bold;
   color: #fff;
 }
+

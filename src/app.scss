@@ -1,0 +1,76 @@
+// VARIABILI
+$coloreSfondo: #1e2d3b;
+$coloreBox: #2e3a46;
+
+/* REGOLE GENERALI */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $coloreSfondo;
+  font-family: sans-serif;
+  color: #808080;
+}
+
+/* HEADER */
+header {
+  height: 80px;
+  background-color: $coloreBox;
+
+  .logo {
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 70%;
+    }
+  }
+}
+
+/* MAIN */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1000px;
+  margin: 50px auto 100px auto;
+
+  .album {
+    background-color: $coloreBox;
+    width: calc((100% / 4) - 40px);
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+
+    .album-top {
+      height: 60%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .album-bottom {
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: center;
+
+      .title {
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+  }
+}
