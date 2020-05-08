@@ -4,10 +4,42 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #1e2d3b;
+}
+
 .container {
-  height: 100vh;
-  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1000px;
   margin: 0 auto;
-  /* DEBUG */
-  background-color: red;
+}
+
+.album {
+  background-color: #2e3a46;
+  width: calc((100% / 4) - 40px);
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.album-top {
+  height: 60%;
+}
+
+.album-top img {
+  width: 100%;
+}
+
+.album-bottom {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
 }

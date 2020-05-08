@@ -9,17 +9,26 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <div class="container">
+    <header>
 
-    </div>
+    </header>
+    <main>
+      <div class="container">
+
+      </div>
+    </main>
 
     <!-- TEMPLATE -->
     <script id="album-template" type="text/x-handlebars-template">
       <div class="album">
-        <img src="{{urlImg}}" alt="cover">
-        <span>{{titolo}}</span>
-        <span>{{artista}}</span>
-        <span>{{anno}}</span>
+        <div class="album-top">
+          <img src="{{urlImg}}" alt="cover">
+        </div>
+        <div class="album-bottom">
+          <span>{{titolo}}</span>
+          <span>{{artista}}</span>
+          <span>{{anno}}</span>
+        </div>
       </div>
     </script>
 
