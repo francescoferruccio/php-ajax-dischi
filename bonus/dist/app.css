@@ -47,6 +47,11 @@ header .search #btn-search {
   border-radius: 5px;
 }
 
+header .search #btn-search:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 /* MAIN */
 
 .container {
