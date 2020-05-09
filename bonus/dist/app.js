@@ -96,11 +96,14 @@
 // Bonus:
 // Attraverso un’altra chiamata ajax, filtrare gli album per artista
 $(document).ready(function () {
+  // variabili globali
   var btnSearch = $("#btn-search");
-  var queryString = ""; // init handlebars
+  var queryString = "";
+  var searchInput = $("#search-input"); // init handlebars
 
   var source = document.getElementById("album-template").innerHTML;
-  var template = Handlebars.compile(source); // funzione che stampa il singolo album in pagina
+  var template = Handlebars.compile(source); // DICHIARAZIONE FUNZIONI-------------------------------------------------------
+  // funzione che stampa il singolo album in pagina
 
   function stampaAlbum(album) {
     var context = {
@@ -111,39 +114,16 @@ $(document).ready(function () {
     };
     var html = template(context);
     $(".container").append(html);
-  } // chiamata ajax alla mia api.php
+  } // funzione che ottiene gli album dall'api
+  // e filtra in base alla query
 
 
-  $.ajax({
-    url: 'api.php',
-    method: 'GET',
-    data: {
-      query: queryString
-    },
-    success: function success(data) {
-      // console.log(data);
-      for (var key in data) {
-        var album = data[key];
-        stampaAlbum(album);
-      }
-    },
-    error: function error(errore) {
-      console.error("ERRORE");
-    }
-  }); // al click sul btn "FILTRA"
-
-  btnSearch.click(function () {
-    // cancello il contenuto della pagina
-    $(".container").html(""); // memorizzo il valore dell'input
-
-    queryString = $("#search-input").val();
-    console.log(queryString); // chiamata ajax
-
+  function getAlbums(query) {
     $.ajax({
       url: 'api.php',
       method: 'GET',
       data: {
-        query: queryString
+        query: query
       },
       success: function success(data) {
         for (var key in data) {
@@ -151,10 +131,37 @@ $(document).ready(function () {
           stampaAlbum(album);
         }
       },
-      error: function error() {
-        console.log("ERRORE");
+      error: function error(errore) {
+        console.error("ERRORE");
       }
     });
+  }
+
+  function filtra() {
+    // cancello il contenuto della pagina
+    $(".container").html(""); // memorizzo il valore dell'input
+
+    queryString = searchInput.val(); // svuoto l'input
+
+    searchInput.val(""); // chiamata ajax
+
+    getAlbums(queryString);
+  } // CODICE-----------------------------------------------------------------------
+  // svuoto il campo di input
+
+
+  searchInput.val(""); // carico tutti i dischi in pagina
+
+  getAlbums(queryString); // al click sul btn "FILTRA"
+
+  btnSearch.click(function () {
+    filtra();
+  }); // alla pressione del tasto invio sull'input
+
+  searchInput.keydown(function (event) {
+    if (event.which == 13) {
+      filtra();
+    }
   });
 });
 
