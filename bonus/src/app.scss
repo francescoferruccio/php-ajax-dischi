@@ -20,7 +20,7 @@ header {
   height: 80px;
   background-color: $coloreBox;
 
-  .logo {
+  .top-container {
     height: 100%;
     width: 60%;
     margin: 0 auto;
@@ -30,6 +30,23 @@ header {
 
     img {
       height: 70%;
+    }
+  }
+
+  .search {
+    #search-input {
+      height: 22px;
+      text-align: center;
+      margin-right: 5px;
+    }
+
+    #btn-search {
+      height: 22px;
+      padding: 0 10px;
+      background-color: $coloreSfondo;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 5px;
     }
   }
 }

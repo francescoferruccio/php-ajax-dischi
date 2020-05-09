@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <div class="logo">
+      <div class="top-container">
         <img src="img/logo.png" alt="logo">
         <div class="search">
           <input id="search-input" type="text" name="filtro" value="" placeholder="Inserisci artista">
