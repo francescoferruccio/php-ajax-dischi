@@ -1,0 +1,77 @@
+/* REGOLE GENERALI */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e2d3b;
+  font-family: sans-serif;
+  color: #808080;
+}
+
+/* HEADER */
+
+header {
+  height: 80px;
+  background-color: #2e3a46;
+}
+
+header .logo {
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo img {
+  height: 70%;
+}
+
+/* MAIN */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1000px;
+  margin: 50px auto 100px auto;
+}
+
+.container .album {
+  background-color: #2e3a46;
+  width: calc((100% / 4) - 40px);
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.container .album .album-top {
+  height: 60%;
+}
+
+.container .album .album-top img {
+  width: 100%;
+}
+
+.container .album .album-bottom {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.container .album .album-bottom .title {
+  font-weight: bold;
+  color: #fff;
+}
+
